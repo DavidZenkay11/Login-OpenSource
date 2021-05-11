@@ -1,5 +1,5 @@
 {
-  "name": "loginln",
+  "name": "loginlnseguro",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tailwindcss/ui": "^0.7.2",
-    "tailwindcss": "^2.1.2"
+    "@tailwindcss/ui": "^0.7.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "cross-env": "^7.0.3"
+    "postcss": "^8.2.14",
+    "tailwindcss": "^2.1.2"
   }
 }

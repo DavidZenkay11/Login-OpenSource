@@ -8,13 +8,15 @@ signupForm.addEventListener('submit', e => {
     console.log(name, email, password);
     signupForm.reset();
     auth.createUserWithEmailAndPassword(email, password).then((cred) => {
-        // console.log(cred);
-        return db.collection('users').doc(cred.user.uid).set({
-            Name: name,
-            Email: email,
-            Password: password
-        }).then(() => {
+        
+        verificar();
+        })
+        .then(() => {
             // console.log('success');
+
+            alert("Revisa tu bandeja de entrada para validar el mail");
+
+
             location = "login.html";
         }).catch(err => {
             // console.log(err.message);
@@ -22,5 +24,14 @@ signupForm.addEventListener('submit', e => {
     }).catch(err => {
         // console.log(err.message);
     })
-})
 
+
+    function verificar() {
+        var user = firebase.auth().currentUser;
+    
+    user.sendEmailVerification().then(function() {
+      // Email sent.
+    }).catch(function(error) {
+      // An error happened.
+    });
+    }
